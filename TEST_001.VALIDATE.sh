@@ -1,3 +1,3 @@
 #!/bin/bash
 echo "Running TEST_001 validation tests..."
-go test -count=1 ./validation/test001
+dotnet test TechTest.Tests/TechTest.Tests.csproj --filter "FullyQualifiedName~TechTest.Tests.Test001"

@@ -1,19 +1,19 @@
 # Tech Test API
 
-A simple Go HTTP API using standard library for basic mathematical operations.
+A simple ASP.NET Core HTTP API for basic mathematical operations.
 
 ## Prerequisites
 
-- Golang 1.24
+- [.NET SDK](https://dotnet.microsoft.com/download) (8 or later)
+- bash (for running the validation scripts)
 
 ## How to Run
 
-2. Run the server:
-   ```bash
-   go run cmd/main.go
-   ```
+```bash
+dotnet run --project TechTest.Api
+```
 
-   The server will start on port 8080.
+The server will start on port 8080 (see `TechTest.Api/Properties/launchSettings.json`).
 
 ## API Endpoints
 
@@ -42,7 +42,7 @@ Returns: `7.00`
 
 ```bash
 # Start the server
-go run cmd/main.go
+dotnet run --project TechTest.Api
 
 # Test addition
 curl "http://localhost:8080/add?a=15&b=25"
@@ -55,4 +55,19 @@ curl "http://localhost:8080/sub?a=20&b=8"
 # Test with decimals
 curl "http://localhost:8080/add?a=3.5&b=2.1"
 # Returns: 5.60
+```
+
+## Running Tests
+
+Run all tests:
+```bash
+dotnet test
+```
+
+Run a specific test suite using the provided scripts:
+```bash
+bash TEST_CORE.sh          # core endpoint tests
+bash TEST_001.VALIDATE.sh  # TEST_001 validation
+bash TEST_002.VALIDATE.sh  # TEST_002 validation
+bash TEST_003.VALIDATE.sh  # TEST_003 validation
 ```

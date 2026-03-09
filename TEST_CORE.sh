@@ -1,3 +1,3 @@
 #!/bin/bash
 echo "Running core validation tests..."
-go test -count=1 ./validation/core
+dotnet test TechTest.Tests/TechTest.Tests.csproj --filter "FullyQualifiedName~TechTest.Tests.Core"
